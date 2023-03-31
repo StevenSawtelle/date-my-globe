@@ -7,23 +7,18 @@ const initialState = {
             "cameraX":  0.3
         },
     guessValues: {
-        start: 0,
+        start: -1,
         mid: 2,
-        end: 5
-    },
-    found: {
-        found: false,
-        foundStartCountry: null,
-        foundEndCountry: null
+        end: 6
     },
 };
 
 export const EARTH_ACTIONS = {
     SET_CURRENT_QUESTION: 'SET_CURRENT_QUESTION',
-    GOAL_FOUND: 'GOAL_FOUND',
     SET_GUESS_START: 'SET_GUESS_START',
     SET_GUESS_MID: 'SET_GUESS_MID',
     SET_GUESS_END: 'SET_GUESS_END',
+    RESET_GAME: 'RESET_GAME',
 }
 
 export const earthReducer = (state = initialState, action) => {
@@ -31,14 +26,6 @@ export const earthReducer = (state = initialState, action) => {
     switch (action.type) {
         case EARTH_ACTIONS.SET_CURRENT_QUESTION:
             return { ...state, currentQuestion: action.payload };
-        case EARTH_ACTIONS.GOAL_FOUND:
-            return { ...state,
-                    found: {
-                        found: action.payload.found,
-                        foundStartCountry: action.payload.foundStartCountry,
-                        foundEndCountry: action.payload.foundEndCountry
-                    },
-                };
         case EARTH_ACTIONS.SET_GUESS_START:
             return {
                 ...state,
@@ -63,6 +50,8 @@ export const earthReducer = (state = initialState, action) => {
                     end: action.payload,
                 }
             };
+        case EARTH_ACTIONS.RESET_GAME:
+            return initialState;
         default:
             return state;
     }

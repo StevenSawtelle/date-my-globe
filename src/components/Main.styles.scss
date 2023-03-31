@@ -1,6 +1,10 @@
 
 .main {
-  background-color: black;
+  background: black;
+  //background: #4B79A1;  /* fallback for old browsers */
+  //background: -webkit-linear-gradient(to top, #283E51, #0A2342);  /* Chrome 10-25, Safari 5.1-6 */
+  //background: linear-gradient(to top, #283E51, #0A2342); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  //background: -olinear-gradient(to top, #283E51, #0A2342);
   color: white;
   text-align: center;
 
@@ -19,6 +23,7 @@
     display: flex;
     justify-content: center;
     padding-bottom: 4px;
+  }
 
     .cool-button {
       display: inline-block;
@@ -48,5 +53,5 @@
 
 
 
-  }
+
 }

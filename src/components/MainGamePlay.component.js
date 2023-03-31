@@ -3,13 +3,14 @@ import { useState } from "react";
 import './Main.styles.scss';
 
 import {
+    resetGameAction,
     setEarthCurrentQuestionAction,
-    setGoalFoundAction, setGuessEndAction,
+    setGuessEndAction,
     setGuessMidAction,
     setGuessStartAction
 } from "../store/earth/earth.actions";
 import {useDispatch, useSelector} from "react-redux";
-import {selectFoundData, selectGuessIndexes, selectHasFound} from "../store/earth/earth.selectors";
+import { selectGuessIndexes, selectHasFound} from "../store/earth/earth.selectors";
 
 const PROMPT = `Look at the highlighted region. What is its' name?`;
 
@@ -27,14 +28,22 @@ const MainGamePlay = ({geoChanges}) => {
         dispatch(setGuessStartAction(mid));
         const newMid = Math.floor((mid + end) / 2);
         dispatch(setGuessMidAction(newMid));
-        updateCurrentCountry(newMid);
+        if(start !== newMid && end !== newMid){
+            updateCurrentCountry(newMid);
+        }
     }
 
     const clickNo = () => {
         dispatch(setGuessEndAction(mid));
         const newMid = Math.floor((start + mid) / 2);
         dispatch(setGuessMidAction(newMid));
-        updateCurrentCountry(newMid);
+        if(start !== newMid && end !== newMid){
+            updateCurrentCountry(newMid);
+        }
+    }
+
+    const startOver = () => {
+        dispatch(resetGameAction())
     }
 
     return (<div className={'main'}>
@@ -46,8 +55,9 @@ const MainGamePlay = ({geoChanges}) => {
             </div>
         </>}
         {found && <>
-            <p>The best range for your globe is {geoChanges[start].date} to {geoChanges[end].date}.</p>
-            <p>This is because your globe has {geoChanges[start].newName} but does not have {geoChanges[end].newName}.</p>
+            <p>The best range for your globe is {start !== -1 ? geoChanges[start]?.date : 'no start'} to {geoChanges[end]?.date || 'now'}.</p>
+            <p>This is because your globe has {start !== -1 ? geoChanges[start]?.newName : 'no early cap'} but does not have {geoChanges[end]?.newName || 'no end cap'}.</p>
+            <button className={'cool-button start-over'} onClick={startOver}>Start Over?</button>
         </>}
     </div>);
 }
