@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import dataJson from './content/data.json';
+
+import React from 'react';
+import './App.scss';
+import Earth from "./components/Earth.component";
+import MainGamePlay from "./components/MainGamePlay.component";
+import {setEarthCurrentQuestionAction} from "./store/earth/earth.actions";
+import {useDispatch} from "react-redux";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch();
+
+    const geoChanges = dataJson.geoChanges;
+    // let start = 0;
+    // let end = geoChanges.length - 1;
+    // let mid = Math.floor(end / 2);
+    // dispatch(setEarthCurrentQuestionAction(geoChanges[mid]));
+
+    return (
+        <div className="app-container">
+            <MainGamePlay geoChanges={geoChanges} />
+            <Earth />
+        </div>
+    );
 }
 
 export default App;
