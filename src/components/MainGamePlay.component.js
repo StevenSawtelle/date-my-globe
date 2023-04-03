@@ -12,7 +12,11 @@ import {
 import {useDispatch, useSelector} from "react-redux";
 import { selectGuessIndexes, selectHasFound} from "../store/earth/earth.selectors";
 
-const PROMPT = `Look at the highlighted region. What is its' name?`;
+const TITLE = 'Date My Globe'
+
+const HEADER = 'Find out when your globe was made based on what the world looked like at the time!'
+
+const PROMPT = `Look at the highlighted region on your globe. What is its' name?`;
 
 const MainGamePlay = ({geoChanges}) => {
     const dispatch = useDispatch();
@@ -47,7 +51,9 @@ const MainGamePlay = ({geoChanges}) => {
     }
 
     return (<div className={'main'}>
+        <h1>{TITLE}</h1>
         {!found && <>
+            <h3>{HEADER}</h3>
             <p>{PROMPT}</p>
             <div className={'buttons'}>
                 <button className={'cool-button yes'} onClick={clickYes}>{geoChanges[mid].newName}</button>
@@ -55,8 +61,12 @@ const MainGamePlay = ({geoChanges}) => {
             </div>
         </>}
         {found && <>
-            <p>The best range for your globe is {start !== -1 ? geoChanges[start]?.date : 'no start'} to {geoChanges[end]?.date || 'now'}.</p>
-            <p>This is because your globe has {start !== -1 ? geoChanges[start]?.newName : 'no early cap'} but does not have {geoChanges[end]?.newName || 'no end cap'}.</p>
+            <p>The best range for your globe is <span className={'highlight red'}>{start !== -1 ? geoChanges[start]?.date : 'the start of globemaking'}</span> to <span className={'highlight green'}>{geoChanges[end]?.date || 'now'}</span>.</p>
+            <p>This is because your globe has{' '}
+                <span className={'highlight red'}>{start !== -1 ? geoChanges[start]?.newName : 'no changes that we know of to globes'}</span>
+                {' '}but does not have{' '}
+                <span className={'highlight green'}>{geoChanges[end]?.newName || 'any new changes since then'}</span>
+            .</p>
             <button className={'cool-button start-over'} onClick={startOver}>Start Over?</button>
         </>}
     </div>);

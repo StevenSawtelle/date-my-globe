@@ -8,6 +8,8 @@ import montenegro from '../content/montenegro3.png';
 import south_sudan from '../content/south_sudan.png';
 import east_timor from '../content/east_timor.png';
 import cabo_verde from '../content/cabo_verde.png';
+import slovenia from '../content/slovenia.png';
+import czechia from '../content/czechia.png';
 import {useSelector} from "react-redux";
 import {selectEarthCurrentQuestion, selectHasFound} from "../store/earth/earth.selectors";
 
@@ -16,6 +18,8 @@ const imageMap = {
     "Montenegro": montenegro,
     "Republic of Cabo Verde": cabo_verde,
     "\"East Timor\" or \"Timor-Leste\"": east_timor,
+    "Slovenia": slovenia,
+    "Czechia": czechia,
 }
 
 const delta = .03;

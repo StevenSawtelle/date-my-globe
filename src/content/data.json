@@ -4,8 +4,8 @@
       "newName": "Slovenia",
       "oldName": "Yugoslavia",
       "date": "1992",
-      "cameraY": -2.1,
-      "cameraX":  0.25
+      "cameraY": -2,
+      "cameraX":  0.35
     },
     {
       "newName": "\"East Timor\" or \"Timor-Leste\"",
@@ -38,7 +38,9 @@
     {
       "newName": "Czechia",
       "oldName": "Czech Republic",
-      "date": "2016"
+      "date": "2016",
+      "cameraY": -2,
+      "cameraX":  0.35
     }
   ]
 }

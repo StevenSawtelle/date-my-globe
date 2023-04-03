@@ -8,21 +8,36 @@
   color: white;
   text-align: center;
 
-  p {
+  h1, h3, p {
     margin: 0;
-    padding-top: 16px;
+    //padding-top: 16px;
     padding-bottom: 16px;
     background: linear-gradient(to right, #FF8C00, #FFA500, #FFB347, #FFC87C, #FFDAB9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    //font-weight: bold;
+
+    .highlight {
+      font-weight: bold;
+
+      &.red {
+        color: red;
+        -webkit-text-fill-color: initial;
+      }
+
+      &.green {
+        color: green;
+        -webkit-text-fill-color: initial;
+      }
+
+    }
   }
 
   .buttons {
     column-gap: 8px;
     display: flex;
     justify-content: center;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
   }
 
     .cool-button {
@@ -50,8 +65,4 @@
       box-shadow: none;
       transform: translateY(2px);
     }
-
-
-
-
 }
