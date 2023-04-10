@@ -1,6 +1,69 @@
 {
   "geoChanges": [
     {
+      "newName": "Indonesia (independent)",
+      "oldName": "Indonesia (Dutch control)",
+      "date": "August 17, 1945",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "India (independent)",
+      "oldName": "India (British control)",
+      "date": "August 15, 1947",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Anglo-Egyptian Sudan",
+      "oldName": "Sudan",
+      "date": "January 1, 1956",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Nigeria (independent)",
+      "oldName": "Nigeria (British control)",
+      "date": "October 1, 1960",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Algeria",
+      "oldName": "France",
+      "date": "July 5, 1962",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Bangladesh",
+      "oldName": "East Pakistan",
+      "date": "December 1971",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Belize",
+      "oldName": "United Kingdom",
+      "date": "September 21, 1981",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Germany",
+      "oldName": "East Germany/West Germany",
+      "date": "October 3, 1990",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Russia, Ukraine, etc.",
+      "oldName": "Union of Soviet Socialist Republics",
+      "date": "1991",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
       "newName": "Slovenia",
       "oldName": "Yugoslavia",
       "date": "1992",
@@ -8,23 +71,44 @@
       "cameraX":  0.35
     },
     {
+      "newName": "Slovakia/The Czech Republic",
+      "oldName": "Czechoslovakia",
+      "date": "January 1, 1993",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Eritrea",
+      "oldName": "Ethiopia",
+      "date": "May 24, 1993",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
       "newName": "\"East Timor\" or \"Timor-Leste\"",
       "oldName": "Indonesia",
-      "date": "1999",
+      "date": "May 20, 2002",
       "cameraY": 2.4,
       "cameraX":  -0.65
     },
     {
       "newName": "Montenegro",
       "oldName": "Serbia and Montenegro",
-      "date": "2006",
+      "date": "June 8, 2006",
       "cameraY": -2.05,
       "cameraX":  0.3
     },
     {
+      "newName": "Kosovo",
+      "oldName": "Serbia",
+      "date": "February 17, 2008",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
       "newName": "South Sudan",
       "oldName": "Sudan",
-      "date": "2011",
+      "date": "July 9, 2011",
       "cameraY": -2.25,
       "cameraX":  -0.3
     },
@@ -41,6 +125,27 @@
       "date": "2016",
       "cameraY": -2,
       "cameraX":  0.35
+    },
+    {
+      "newName": "Eswatini",
+      "oldName": "Swaziland",
+      "date": "February 2019",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "North Macedonia",
+      "oldName": "Macedonia",
+      "date": "February 2019",
+      "cameraY": 0,
+      "cameraX":  0
+    },
+    {
+      "newName": "Türkiye",
+      "oldName": "Turkey",
+      "date": "May 31, 2022",
+      "cameraY": 0,
+      "cameraX":  0
     }
   ]
 }
