@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import {useSelector} from "react-redux";
 import * as THREE from 'three';
+
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+import {selectEarthCurrentQuestion, selectHasFound} from "../store/earth/earth.selectors";
 
 // import earthNoClouds from '../content/earth_no_clouds.jpg';
 import earthNoClouds2 from '../content/earth_no_clouds_2.jpg';
@@ -10,8 +14,6 @@ import east_timor from '../content/east_timor.png';
 import cabo_verde from '../content/cabo_verde.png';
 import slovenia from '../content/slovenia.png';
 import czechia from '../content/czechia.png';
-import {useSelector} from "react-redux";
-import {selectEarthCurrentQuestion, selectHasFound} from "../store/earth/earth.selectors";
 
 const imageMap = {
     "South Sudan": south_sudan,
@@ -20,6 +22,7 @@ const imageMap = {
     "\"East Timor\" or \"Timor-Leste\"": east_timor,
     "Slovenia": slovenia,
     "Czechia": czechia,
+    "Slovakia/The Czech Republic": slovenia,//todo real value
 }
 
 const delta = .03;
@@ -101,13 +104,13 @@ function Earth() {
         }
         animate();
 
-        return () => {
+        return () => {  
             // window.removeEventListener('mousemove', onMouseMove);
             if (containerRef.current) {
                 containerRef.current.removeChild(renderer.domElement);
             }
         };
-    }, [newName, oldName, date, cameraY, cameraX ]);
+    }, [newName, oldName, date, cameraY, cameraX, found ]);
 
     return <div ref={containerRef} />;
 }

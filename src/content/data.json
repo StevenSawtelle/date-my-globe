@@ -39,8 +39,8 @@
       "newName": "Bangladesh",
       "oldName": "East Pakistan",
       "date": "December 1971",
-      "cameraY": 0,
-      "cameraX":  0
+      "cameraY": 1,
+      "cameraX":  -1
     },
     {
       "newName": "Belize",
@@ -74,8 +74,8 @@
       "newName": "Slovakia/The Czech Republic",
       "oldName": "Czechoslovakia",
       "date": "January 1, 1993",
-      "cameraY": 0,
-      "cameraX":  0
+      "cameraY": -2,
+      "cameraX":  0.35
     },
     {
       "newName": "Eritrea",

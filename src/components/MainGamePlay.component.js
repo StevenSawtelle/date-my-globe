@@ -1,16 +1,9 @@
-import { useState } from "react";
+import {useDispatch, useSelector} from "react-redux";
+
+import { selectGuessIndexes, selectHasFound} from "../store/earth/earth.selectors";
+import { setCurrentQuestion, setGuessEnd, setGuessMid, setGuessStart } from "../store/earth/earth.slice";
 
 import './Main.styles.scss';
-
-import {
-    resetGameAction,
-    setEarthCurrentQuestionAction,
-    setGuessEndAction,
-    setGuessMidAction,
-    setGuessStartAction
-} from "../store/earth/earth.actions";
-import {useDispatch, useSelector} from "react-redux";
-import { selectGuessIndexes, selectHasFound} from "../store/earth/earth.selectors";
 
 const TITLE = 'Date My Globe'
 
@@ -24,30 +17,35 @@ const MainGamePlay = ({geoChanges}) => {
     const found = useSelector(selectHasFound);
 
     const updateCurrentCountry = newMid => {
-        dispatch(setEarthCurrentQuestionAction(geoChanges[newMid]))
+        dispatch(setCurrentQuestion(geoChanges[newMid]))
     }
 
 
     const clickYes = () => {
-        dispatch(setGuessStartAction(mid));
+        dispatch(setGuessStart(mid));
         const newMid = Math.floor((mid + end) / 2);
-        dispatch(setGuessMidAction(newMid));
+        dispatch(setGuessMid(newMid));
         if(start !== newMid && end !== newMid){
             updateCurrentCountry(newMid);
         }
     }
 
     const clickNo = () => {
-        dispatch(setGuessEndAction(mid));
+        dispatch(setGuessEnd(mid));
         const newMid = Math.floor((start + mid) / 2);
-        dispatch(setGuessMidAction(newMid));
+        dispatch(setGuessMid(newMid));
         if(start !== newMid && end !== newMid){
             updateCurrentCountry(newMid);
         }
     }
 
     const startOver = () => {
-        dispatch(resetGameAction())
+        const end = geoChanges.length - 1;
+        const mid = Math.floor(end / 2);
+        dispatch(setGuessStart(0));
+        dispatch(setGuessMid(mid));
+        dispatch(setGuessEnd(end));
+        dispatch(setCurrentQuestion(geoChanges[mid]));//todo helper for duplicate in app.component
     }
 
     return (<div className={'main'}>
